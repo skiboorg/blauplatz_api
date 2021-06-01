@@ -36,6 +36,10 @@ class User(AbstractUser):
     avatar = models.ImageField('Avatar', upload_to='user/avatars',blank=True,null=True)
     email = models.EmailField('Email', blank=True, null=True, unique=True)
     username = models.CharField('Username',max_length=255, blank=True, null=True)
+    is_3_months_account = models.BooleanField('3 months account', default=False)
+    is_6_months_account = models.BooleanField('6 months account', default=False)
+    is_12_months_account = models.BooleanField('12 months account', default=False)
+    is_vip = models.BooleanField('Is VIP ?', default=False)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
